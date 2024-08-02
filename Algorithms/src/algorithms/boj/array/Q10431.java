@@ -47,20 +47,38 @@ public class Q10431 {
 		}
 
 		int count = 0;
+
 		for(int i=0; i<round; i++) {
-			for(int kidNum=0; kidNum<20; kidNum++) {
-				int selectedKid = map[i][kidNum];
-				if((kidNum+1)<20) {
-					if(map[i][kidNum+1] < selectedKid) {
-						map[i][kidNum] = map[i][kidNum+1];
-						map[i][kidNum+1] = selectedKid;
-						count++;
+			
+			for(int j=0; j<20; j++) {
+				int thisNum = map[i][j];
+				if(j>0) {
+					// 서야 할 자리 찾기
+					int idx = j;
+					for(int k=0; k<j; k++) {
+						if(thisNum < map[i][k]) {
+							idx = k;
+							break;
+						}
+					}
+					
+					if(idx != j) {
+						// 해당 자리에서부터 뒤로 한칸씩 밀고, 자리에 서기
+						for(int k=j; k>idx; k--) {
+							map[i][k] = map[i][k-1];
+							count++;
+						}
+						map[i][idx] = thisNum;
+					}else {
+						continue;
 					}
 				}
 			}
+			System.out.print(i + " ");
+			System.out.println(count);
 		}
 		
-		System.out.println(count);
+		
 	}
 	
 	
