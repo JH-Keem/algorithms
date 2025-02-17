@@ -82,7 +82,7 @@ public class ListPerformanceTest{
     public static void justAddAndRemove(int dataSize, int middleIndex){
         int iterations = 100; // 반복 횟수
 
-        // 1️⃣ ArrayList 반복 중간 삽입/삭제
+        //  ArrayList 반복 중간 삽입/삭제
         List<Integer> arrayList = new ArrayList<>();
         for (int i = 0; i < dataSize; i++) arrayList.add(i);
 
@@ -94,7 +94,7 @@ public class ListPerformanceTest{
         long end = System.nanoTime();
         System.out.println("ArrayList 반복 중간 삽입/삭제 시간: " + (end - start) / 1_000_000.0 + " ms");
 
-        // 2️⃣ LinkedList 반복 중간 삽입/삭제 (ListIterator 사용)
+        //  LinkedList 반복 중간 삽입/삭제 (ListIterator 사용)
         List<Integer> linkedList = new LinkedList<>();
         for (int i = 0; i < dataSize; i++) linkedList.add(i);
 
