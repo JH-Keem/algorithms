@@ -23,6 +23,15 @@ public class TwodimentionalArrayList {
         StringTokenizer getInput = new StringTokenizer(br.readLine());
         int iteration = Integer.parseInt(getInput.nextToken());
         int edges = Integer.parseInt(getInput.nextToken());
+
+        /*
+            입력 노드
+            3, 4    간선 4개를 포함한 3개의 노드
+            1, 2, 4
+            2, 1, 0
+            1, 3, 7
+            3, 2, 6
+         */
         
         for(int i=0; i<edges; i++){
             //  입력받은 노드 갯수만큼 반복
