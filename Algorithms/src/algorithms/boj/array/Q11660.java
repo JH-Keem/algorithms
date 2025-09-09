@@ -39,6 +39,7 @@ public class Q11660 {
         //  합 배열 저장하기
         for(int i=1; i<=N; i++){
             for(int j=1; j<=N; j++){
+                //  모든 구갆삽 - x축 구간합 - y축 구간합 + 중복으로 빼진 구간합
                 sumArray[i][j] = sumArray[i][j - 1] + sumArray[i - 1][j] - sumArray[i - 1][j - 1] + array[i][j];
             }
         }
