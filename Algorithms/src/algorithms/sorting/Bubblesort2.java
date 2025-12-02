@@ -7,5 +7,8 @@ public class Bubblesort2 {
     }
 
 
+    public static void checkSorted(int[] inputArray){
+
+    }
 
 }
